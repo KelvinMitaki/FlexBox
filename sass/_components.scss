@@ -233,9 +233,16 @@
   cursor: pointer;
   transition: all 0.2s;
   font-size: inherit;
+  & span {
+    margin-left: 3px;
+    transition: all 0.2s;
+  }
   &:hover {
     color: var(--color-grey-dark-1);
     cursor: pointer;
+    span {
+      margin-left: 0.8rem;
+    }
   }
   &:focus {
     outline: none;
@@ -307,5 +314,59 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+.review {
+  background-color: #fff;
+  box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: 0.25);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  font-size: inherit;
+  position: relative;
+  overflow: hidden;
+  &__text {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    &-box {
+      margin-left: 1.5rem;
+    }
+    &-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    &-date {
+      font-size: 1rem;
+      color: var(--color-grey-dark-3);
+    }
+  }
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+  }
+  &__rating {
+    margin-left: auto;
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    color: var(--color-grey-light-1);
+    line-height: 1;
+    font-family: sans-serif;
   }
 }
